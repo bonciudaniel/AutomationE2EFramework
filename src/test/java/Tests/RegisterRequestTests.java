@@ -1,6 +1,6 @@
 package Tests;
 
-import Backend.RequestObject.RequestLogin.RequestRegister.RequestRegister;
+import Backend.RequestObject.RequestUser.RequestTokenUser.RequestTokenUser;
 import Backend.RequestObject.RequestMethodType;
 import Backend.RequestObject.RequestURLType;
 import Backend.ResponseObject.ResponseBodyType;
@@ -15,7 +15,7 @@ public class RegisterRequestTests extends Hooks {
     @Test(priority = 1)
     public void postRegisterSuccessTest(){
 
-        RequestRegister RequestSuccess = new RequestRegister.RequestRegisterBuilder().Email("eve.holt@reqres.in").Password("pistol").build();
+        RequestTokenUser RequestSuccess = new RequestTokenUser.RequestRegisterBuilder().Email("eve.holt@reqres.in").Password("pistol").build();
         Response response = requestHelper.performRequest(RequestMethodType.POST_METHOD,baseURL+ RequestURLType.POST_Register,RequestSuccess);
 
         responseHelper = new ResponseHelper(response);
@@ -29,7 +29,7 @@ public class RegisterRequestTests extends Hooks {
     @Test(priority = 2)
     public void postRegisterUnsuccesfulTest(){
 
-        RequestRegister RequestFailed = new RequestRegister.RequestRegisterBuilder().Email("sydney@fife").build();
+        RequestTokenUser RequestFailed = new RequestTokenUser.RequestRegisterBuilder().Email("sydney@fife").build();
         Response response = requestHelper.performRequest(RequestMethodType.POST_METHOD, baseURL+RequestURLType.POST_Register,RequestFailed);
 
         String expectedError = "Missing password";

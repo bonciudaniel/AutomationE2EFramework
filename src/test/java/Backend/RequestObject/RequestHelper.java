@@ -16,6 +16,10 @@ public class RequestHelper {
 
     }
     public Response performRequest(String requestType,String endpoint,Object body){
+
+        String baseUrl = "https://bookstore.toolsqa.com";
+        Request.baseUri(baseUrl);
+
         switch (requestType){
             case "get" :
                 response = Request.get(endpoint);
@@ -40,6 +44,24 @@ public class RequestHelper {
         Assert.assertNotNull(response,"Request was not performed");
        return response;
     }
+    public Response performRequest(String requestType,String endpoint,Object body,String Token){
 
+        String baseUrl = "https://bookstore.toolsqa.com";
+        Request.baseUri(baseUrl);
+        Request.headers("Authorization","Bearer"+Token);
+
+
+        switch (requestType){
+            case "post" :
+                Request.body(body);
+                response = Request.post(endpoint);
+                break;
+
+
+        }
+        Assert.assertNotNull(response,"Request was not performed");
+        return response;
+    }
 
 }
+

@@ -1,4 +1,4 @@
-package Backend.RequestObject.RequestLogin;
+package Backend.RequestObject.RequestUser;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;

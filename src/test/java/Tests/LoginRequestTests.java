@@ -1,6 +1,6 @@
 package Tests;
 
-import Backend.RequestObject.RequestLogin.RequestPostUser;
+import Backend.RequestObject.RequestUser.RequestPostUser;
 import Backend.RequestObject.RequestMethodType;
 import Backend.RequestObject.RequestURLType;
 import Backend.ResponseObject.ResponseBodyType;

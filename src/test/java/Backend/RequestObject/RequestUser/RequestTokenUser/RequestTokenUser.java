@@ -1,11 +1,11 @@
-package Backend.RequestObject.RequestLogin.RequestRegister;
+package Backend.RequestObject.RequestUser.RequestTokenUser;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 
 @Builder
 
-public class RequestRegister {
+public class RequestTokenUser {
 
     @JsonProperty("email")
     private String Email;
@@ -13,10 +13,9 @@ public class RequestRegister {
     @JsonProperty("password")
     private String Password;
 
-    public static class RequestRegisterBuilder{
-        public RequestRegisterBuilder() {
+    public static class RequestTokenUserBuilder{
+        public RequestTokenUserBuilder(){
+
         }
     }
-
-
 }
